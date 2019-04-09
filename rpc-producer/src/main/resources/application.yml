@@ -1,0 +1,8 @@
+server:
+  port: 8001
+#zookeeper
+registry:
+  address: localhost:2181
+rpc:
+  server:
+    address: localhost:18868
