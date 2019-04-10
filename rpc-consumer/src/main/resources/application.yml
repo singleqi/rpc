@@ -1,3 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 #zookeeper
+registry:
+  address: localhost:2181
