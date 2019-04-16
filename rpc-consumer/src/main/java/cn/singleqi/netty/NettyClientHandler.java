@@ -60,7 +60,6 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
         return queue;
     }
 
-
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt)throws Exception {
         logger.info("已超过30秒未与RPC服务器进行读写操作!将发送心跳消息...");
         if (evt instanceof IdleStateEvent){

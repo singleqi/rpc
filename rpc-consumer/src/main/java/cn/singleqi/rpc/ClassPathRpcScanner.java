@@ -73,6 +73,11 @@ public class ClassPathRpcScanner extends ClassPathBeanDefinitionScanner{
             }
         });
     }
+
+    /**
+     * 将扫描到的所有类设置属性
+     * @param beanDefinitions
+     */
     private void processBeanDefinitions(
             Set<BeanDefinitionHolder> beanDefinitions) {
 

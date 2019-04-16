@@ -14,6 +14,7 @@ public class RpcScannerConfigurer implements BeanDefinitionRegistryPostProcessor
     String basePackage = "cn.singleqi.service";
 
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
+        //创建ClassPath扫描器，设置属性，然后调用扫描方法
         ClassPathRpcScanner scanner = new ClassPathRpcScanner(beanDefinitionRegistry);
 
         scanner.setAnnotationClass(null);
