@@ -1,4 +1,5 @@
 # 流程
+## rpc基于netty、zookeeper、动态代理、反射、序列化实现
 ### provider-netty-server
 在nettyServer中启动netty服务器,并将服务地址传到zookeeper中注册。
 ### provider-zookeeper
@@ -63,3 +64,14 @@ Host: localhost:8002
 cache-control: no-cache  
 
 [参考](https://juejin.im/post/5c6d7640f265da2de80f5e9c#heading-10)
+
+## rpc基于Dubbo实现
+### provider-zookeeper
+将接口信息注册到zookeeper的/dubbo目录下，并存下当前接口服务的信息，例如：  
+dubbo://192.168.1.4:20880/cn.singleqi.service.HelloService?anyhost=true&application=dubbo-provider&dubbo=2.6.0&generic=false&interface=cn.singleqi.service.HelloService&methods=sayHello&pid=2936&side=provider&timestamp=1555499312341
+
+### consumer-zookeeper
+将接口调用注册到zookeeper的/dubbo目录下，并存下当前接口调用的信息，例如：  
+consumer://192.168.1.4/cn.singleqi.service.HelloService?application=dubbo-consumer&category=consumers&check=false&dubbo=2.6.0&interface=cn.singleqi.service.HelloService&methods=sayHello&pid=12156&side=consumer&timestamp=1555499642279
+
+[参考](https://juejin.im/post/5bfdf8f86fb9a049df23c37f#heading-24)
